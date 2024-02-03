@@ -1,4 +1,4 @@
-package app.prod;
+package app.prod.model;
 
 /**
  * Defines the contract for location details within the system.

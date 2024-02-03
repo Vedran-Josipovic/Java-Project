@@ -1,4 +1,4 @@
-package app.prod;
+package app.prod.model;
 
 import java.util.Objects;
 import java.util.Set;

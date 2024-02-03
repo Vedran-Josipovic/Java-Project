@@ -1,4 +1,4 @@
-package app.prod;
+package app.prod.model;
 
 import java.util.Objects;
 
@@ -8,8 +8,8 @@ import java.util.Objects;
  * incorporating both communication and location aspects.
  */
 public abstract class Contact extends Entity {
-    private String email;
-    private Address address; // Changed to use Address object for structured address representation.
+    protected String email;
+    protected Address address;
 
     /**
      * Constructs a new Contact instance.

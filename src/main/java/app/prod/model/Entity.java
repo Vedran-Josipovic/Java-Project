@@ -1,4 +1,4 @@
-package app.prod;
+package app.prod.model;
 
 import java.util.Objects;
 
@@ -7,8 +7,8 @@ import java.util.Objects;
  * Provides common properties and functionality for entity identification and naming.
  */
 public abstract class Entity {
-    private Long id;
-    private String name;
+    protected Long id;
+    protected String name;
 
     /**
      * Constructs a new Entity with the specified identifier and name.
@@ -20,6 +20,8 @@ public abstract class Entity {
         this.id = id;
         this.name = name;
     }
+
+    public Entity(){}
 
     public Long getId() {
         return id;

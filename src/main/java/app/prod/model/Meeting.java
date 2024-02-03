@@ -1,17 +1,18 @@
-package app.prod;
+package app.prod.model;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 /**
- * Represents a meeting with specified details, extending the abstract {@code Entity} class.
+ * Represents a meeting with specified details.
  */
 public class Meeting extends Entity{
     private LocalDateTime meetingStart;
     private LocalDateTime meetingEnd;
     private Location location;
-    private List<Contact> participants;
+    private Set<Contact> participants;
     private String notes;
 
     /**
@@ -22,10 +23,10 @@ public class Meeting extends Entity{
      * @param meetingStart  The start time of the meeting.
      * @param meetingEnd    The end time of the meeting.
      * @param location      The location of the meeting, represented by the {@code Location} interface.
-     * @param participants  A list of contacts participating in the meeting.
+     * @param participants  A set of contacts participating in the meeting.
      * @param notes         Additional notes or comments about the meeting.
      */
-    public Meeting(Long id, String name, LocalDateTime meetingStart, LocalDateTime meetingEnd, Location location, List<Contact> participants, String notes) {
+    public Meeting(Long id, String name, LocalDateTime meetingStart, LocalDateTime meetingEnd, Location location, Set<Contact> participants, String notes) {
         super(id, name);
         this.meetingStart = meetingStart;
         this.meetingEnd = meetingEnd;
@@ -58,11 +59,11 @@ public class Meeting extends Entity{
         this.location = location;
     }
 
-    public List<Contact> getParticipants() {
+    public Set<Contact> getParticipants() {
         return participants;
     }
 
-    public void setParticipants(List<Contact> participants) {
+    public void setParticipants(Set<Contact> participants) {
         this.participants = participants;
     }
 
