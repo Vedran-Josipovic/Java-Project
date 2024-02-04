@@ -13,6 +13,7 @@ import java.util.Objects;
  */
 public class Task extends Entity {
 
+    //Možda napraviti sučelje koje povezuje ownere taskova sa taskovima
     private String description;
     private LocalDate deadline;
     private Status status;

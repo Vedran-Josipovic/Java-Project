@@ -3,9 +3,13 @@ package app.prod.main;
 import app.prod.enumeration.Status;
 import app.prod.exception.entityInitializationException;
 import app.prod.model.*;
+import app.prod.utility.DatabaseUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -52,13 +56,25 @@ public class Main {
         }
 
 
-
         System.out.println("Project: " + project.getName());
         System.out.println("Client: " + client.getName());
         System.out.println("Tasks:");
         tasks.forEach(t -> System.out.println(" - " + t.getName() + " due by " + t.getDeadline()));
 
         System.out.println("Upcoming Meeting: " + meeting.getName() + " at " + meetingLocation.getFullLocationDetails());
+
+
+        System.out.println("Connecting to database");
+
+        try (Connection connection = DatabaseUtils.connectToDatabase()) {
+            logger.info("Connected to database!");
+            System.out.println(connection.isClosed());
+        } catch (SQLException | IOException ex) {
+            String message = "An error occurred while accessing database!";
+            logger.error(message, ex);
+            System.out.println(message);
+        }
+
 
         logger.info("App finished executing.");
     }
