@@ -1,7 +1,7 @@
 package app.prod.model;
 
 import app.prod.enumeration.Status;
-import app.prod.exception.TaskInitializationException;
+import app.prod.exception.entityInitializationException;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -108,18 +108,17 @@ public class Task extends Entity {
         }
 
 
-
-
         /**
          * Builds and returns a {@link Task} instance with the parameters provided to this builder.
          * Ensures that the task has a non-null ID and a non-empty name before construction.
          *
          * @return A fully constructed {@link Task} instance.
-         * @throws TaskInitializationException if either the ID is null or the name is empty.
+         * @throws entityInitializationException if either the ID is null or the name is empty.
          */
-        public Task build() throws TaskInitializationException {
+        public Task build() throws entityInitializationException {
+            //Pri korištenju tapraviti while petlju sa try-catch
             if (id == null || name == null || name.isEmpty()) {
-                throw new TaskInitializationException("Task must have a non-null id and a non-empty name.");
+                throw new entityInitializationException("Task must have a non-null id and a non-empty name.");
             }
             Task task = new Task();
             //Ako dodam validaciju unosa koristiti settere

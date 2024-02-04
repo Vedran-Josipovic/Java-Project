@@ -1,7 +1,7 @@
 package app.prod.main;
 
 import app.prod.enumeration.Status;
-import app.prod.exception.TaskInitializationException;
+import app.prod.exception.entityInitializationException;
 import app.prod.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,7 +10,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class Main {
@@ -22,12 +21,12 @@ public class Main {
         Address clientAddress = new Address("1234 Main St", "Suite 101", "Springfield");
         Address employeeAddress = new Address("42 View St", "12B", "Springfield");
 
-        Client client = new Client(1L, "Acme Corp", "acme@example.com", clientAddress, "Acme Corporation", new HashSet<>());
-        Employee employee = new Employee(1L, "John Smith", "john.smith@example.com", employeeAddress, "Engineer", new HashSet<>(), new HashSet<>());
+        Client client = new Client(1L, "Acme Corp", "acme@example.com", clientAddress, "Acme Corporation", new ArrayList<>());
+        Employee employee = new Employee(1L, "John Smith", "john.smith@example.com", employeeAddress, "Engineer", new HashSet<>(), new HashSet<>(), new ArrayList<>());
 
-        List<Task> tasks = new ArrayList<>();
+        Set<Task> tasks = new HashSet<>();
 
-        Project project = new Project(1L, "New Website", LocalDate.now(), LocalDate.now().plusDays(60), Status.IN_PROGRESS, client, tasks);
+        Project project = new Project(1L, "New Website", LocalDate.now(), LocalDate.now().plusDays(60), Status.IN_PROGRESS, client, tasks, new ArrayList<>());
 
         Location meetingLocation = new VirtualLocation("https://meet.example.com/12345", "Example Meet");
         Set<Contact> participants = new HashSet<>();
@@ -48,12 +47,11 @@ public class Main {
             // Also add the task to the employee's task set
             employee.getTasks().add(task);
 
-        } catch (TaskInitializationException e) {
+        } catch (entityInitializationException e) {
             logger.error("Task initialization failed: " + e.getMessage(), e);
         }
 
-        // Update client's project set
-        client.getProjects().add(project);
+
 
         System.out.println("Project: " + project.getName());
         System.out.println("Client: " + client.getName());

@@ -1,14 +1,13 @@
 package app.prod.model;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
 /**
  * Represents a meeting with specified details.
  */
-public class Meeting extends Entity{
+public class Meeting extends Entity {
     private LocalDateTime meetingStart;
     private LocalDateTime meetingEnd;
     private Location location;
@@ -18,13 +17,13 @@ public class Meeting extends Entity{
     /**
      * Constructs a new Meeting instance with detailed information.
      *
-     * @param id            The unique identifier for the meeting.
-     * @param name          The name or title of the meeting.
-     * @param meetingStart  The start time of the meeting.
-     * @param meetingEnd    The end time of the meeting.
-     * @param location      The location of the meeting, represented by the {@code Location} interface.
-     * @param participants  A set of contacts participating in the meeting.
-     * @param notes         Additional notes or comments about the meeting.
+     * @param id           The unique identifier for the meeting.
+     * @param name         The name or title of the meeting.
+     * @param meetingStart The start time of the meeting.
+     * @param meetingEnd   The end time of the meeting.
+     * @param location     The location of the meeting, represented by the {@code Location} interface.
+     * @param participants A set of contacts participating in the meeting.
+     * @param notes        Additional notes or comments about the meeting.
      */
     public Meeting(Long id, String name, LocalDateTime meetingStart, LocalDateTime meetingEnd, Location location, Set<Contact> participants, String notes) {
         super(id, name);

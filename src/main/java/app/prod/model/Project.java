@@ -5,35 +5,28 @@ import app.prod.enumeration.Status;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * Represents a project with defined start and end dates, status, associated client, and a list of tasks.
  * Extends the {@link Entity} class to include common identifier and name properties.
  */
-public class Project extends Entity{
+public class Project extends Entity {
     private LocalDate startDate, deadline;
     private Status status;
     private Client client;
-    private List<Task> tasks;
+    private Set<Task> tasks;
+    private List<Transaction> transactions;
 
-    /**
-     * Constructs a new Project instance with specified details.
-     *
-     * @param id        The unique identifier of the project.
-     * @param name      The name of the project.
-     * @param startDate The start date of the project.
-     * @param deadline  The projected end date of the project.
-     * @param status    The current status of the project.
-     * @param client    The client associated with the project.
-     * @param tasks     The list of tasks associated with the project.
-     */
-    public Project(Long id, String name, LocalDate startDate, LocalDate deadline, Status status, Client client, List<Task> tasks) {
+
+    public Project(Long id, String name, LocalDate startDate, LocalDate deadline, Status status, Client client, Set<Task> tasks, List<Transaction> transactions) {
         super(id, name);
         this.startDate = startDate;
         this.deadline = deadline;
         this.status = status;
         this.client = client;
         this.tasks = tasks;
+        this.transactions = transactions;
     }
 
     public LocalDate getStartDate() {
@@ -68,12 +61,20 @@ public class Project extends Entity{
         this.client = client;
     }
 
-    public List<Task> getTasks() {
+    public Set<Task> getTasks() {
         return tasks;
     }
 
-    public void setTasks(List<Task> tasks) {
+    public void setTasks(Set<Task> tasks) {
         this.tasks = tasks;
+    }
+
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
     }
 
     @Override
@@ -82,12 +83,12 @@ public class Project extends Entity{
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Project project = (Project) o;
-        return Objects.equals(getStartDate(), project.getStartDate()) && Objects.equals(getDeadline(), project.getDeadline()) && getStatus() == project.getStatus() && Objects.equals(getClient(), project.getClient()) && Objects.equals(getTasks(), project.getTasks());
+        return Objects.equals(getStartDate(), project.getStartDate()) && Objects.equals(getDeadline(), project.getDeadline()) && getStatus() == project.getStatus() && Objects.equals(getClient(), project.getClient()) && Objects.equals(getTasks(), project.getTasks()) && Objects.equals(getTransactions(), project.getTransactions());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getStartDate(), getDeadline(), getStatus(), getClient(), getTasks());
+        return Objects.hash(super.hashCode(), getStartDate(), getDeadline(), getStatus(), getClient(), getTasks(), getTransactions());
     }
 
     @Override
@@ -98,6 +99,7 @@ public class Project extends Entity{
                 ", status=" + status +
                 ", client=" + client +
                 ", tasks=" + tasks +
+                ", transactions=" + transactions +
                 "} " + super.toString();
     }
 }

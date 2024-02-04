@@ -1,6 +1,10 @@
 package app.prod.model;
 
+import app.prod.enumeration.TransactionType;
+
+import java.util.List;
 import java.util.Objects;
+import java.util.PrimitiveIterator;
 import java.util.Set;
 
 /**
@@ -9,22 +13,12 @@ import java.util.Set;
  */
 public class Client extends Contact {
     private String companyName;
-    private Set<Project> projects;
+    private List<Transaction> transactions;
 
-    /**
-     * Constructs a new Client instance with detailed information including a physical address.
-     *
-     * @param id          The unique identifier for the client.
-     * @param name        The name of the contact person or entity.
-     * @param email       The email address of the client.
-     * @param address     The {@code Address} object representing the client's physical address.
-     * @param companyName The name of the company associated with the client.
-     * @param projects    A set of projects linked to the client.
-     */
-    public Client(Long id, String name, String email, Address address, String companyName, Set<Project> projects) {
+    public Client(Long id, String name, String email, Address address, String companyName, List<Transaction> transactions) {
         super(id, name, email, address);
         this.companyName = companyName;
-        this.projects = projects;
+        this.transactions = transactions;
     }
 
     public String getCompanyName() {
@@ -35,12 +29,12 @@ public class Client extends Contact {
         this.companyName = companyName;
     }
 
-    public Set<Project> getProjects() {
-        return projects;
+    public List<Transaction> getTransactions() {
+        return transactions;
     }
 
-    public void setProjects(Set<Project> projects) {
-        this.projects = projects;
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
     }
 
     @Override
@@ -49,19 +43,19 @@ public class Client extends Contact {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Client client = (Client) o;
-        return Objects.equals(getCompanyName(), client.getCompanyName()) && Objects.equals(getProjects(), client.getProjects());
+        return Objects.equals(getCompanyName(), client.getCompanyName()) && Objects.equals(getTransactions(), client.getTransactions());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getCompanyName(), getProjects());
+        return Objects.hash(super.hashCode(), getCompanyName(), getTransactions());
     }
 
     @Override
     public String toString() {
         return "Client{" +
                 "companyName='" + companyName + '\'' +
-                ", projects=" + projects +
+                ", transactions=" + transactions +
                 "} " + super.toString();
     }
 }

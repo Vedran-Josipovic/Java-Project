@@ -21,7 +21,8 @@ public abstract class Entity {
         this.name = name;
     }
 
-    public Entity(){}
+    public Entity() {
+    }
 
     public Long getId() {
         return id;

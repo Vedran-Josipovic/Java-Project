@@ -1,5 +1,6 @@
 package app.prod.model;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -12,23 +13,14 @@ public class Employee extends Contact {
     private String position;
     private Set<Project> projects;
     private Set<Task> tasks;
+    private List<Transaction> transactions;
 
-    /**
-     * Constructs a new Employee instance with specified details including projects and tasks.
-     *
-     * @param id       The unique identifier for the employee.
-     * @param name     The name of the employee.
-     * @param email    The email address of the employee.
-     * @param address  The {@code Address} object representing the employee's physical address.
-     * @param position The position or role of the employee within the company.
-     * @param projects A set of projects associated with the employee.
-     * @param tasks    A set of tasks assigned to the employee.
-     */
-    public Employee(Long id, String name, String email, Address address, String position, Set<Project> projects, Set<Task> tasks) {
-        super(id, name, email, address); // Correctly pass the Address object
+    public Employee(Long id, String name, String email, Address address, String position, Set<Project> projects, Set<Task> tasks, List<Transaction> transactions) {
+        super(id, name, email, address);
         this.position = position;
         this.projects = projects;
         this.tasks = tasks;
+        this.transactions = transactions;
     }
 
     public String getPosition() {
@@ -55,18 +47,26 @@ public class Employee extends Contact {
         this.tasks = tasks;
     }
 
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Employee employee = (Employee) o;
-        return Objects.equals(getPosition(), employee.getPosition()) && Objects.equals(getProjects(), employee.getProjects()) && Objects.equals(getTasks(), employee.getTasks());
+        return Objects.equals(getPosition(), employee.getPosition()) && Objects.equals(getProjects(), employee.getProjects()) && Objects.equals(getTasks(), employee.getTasks()) && Objects.equals(getTransactions(), employee.getTransactions());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getPosition(), getProjects(), getTasks());
+        return Objects.hash(super.hashCode(), getPosition(), getProjects(), getTasks(), getTransactions());
     }
 
     @Override
@@ -75,6 +75,7 @@ public class Employee extends Contact {
                 "position='" + position + '\'' +
                 ", projects=" + projects +
                 ", tasks=" + tasks +
+                ", transactions=" + transactions +
                 "} " + super.toString();
     }
 }
