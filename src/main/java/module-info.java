@@ -7,4 +7,12 @@ module hr.javafx.production.architectureapp {
 
     opens javafx.prod to javafx.fxml;
     exports javafx.prod;
+
+    exports javafx.prod.menu to javafx.fxml;
+    exports javafx.prod.address to javafx.fxml; // Add this line
+
+    opens javafx.prod.menu to javafx.fxml;
+    opens javafx.prod.address to javafx.fxml; // And this, if your AddressSearchController uses @FXML for private fields
+
+
 }

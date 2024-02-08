@@ -14,6 +14,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Main {
@@ -75,7 +76,10 @@ public class Main {
             System.out.println(message);
         }
 
-
+        List<Address> addresses = DatabaseUtils.getAddresses();
+        addresses.forEach(System.out::println);
         logger.info("App finished executing.");
+
+
     }
 }
