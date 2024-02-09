@@ -9,10 +9,11 @@ module hr.javafx.production.architectureapp {
     exports javafx.prod;
 
     exports javafx.prod.menu to javafx.fxml;
-    exports javafx.prod.address to javafx.fxml; // Add this line
+    exports javafx.prod.address to javafx.fxml;
+    exports javafx.prod.transaction to javafx.fxml;
 
     opens javafx.prod.menu to javafx.fxml;
-    opens javafx.prod.address to javafx.fxml; // And this, if your AddressSearchController uses @FXML for private fields
-
+    opens javafx.prod.address to javafx.fxml;
+    opens javafx.prod.transaction to javafx.fxml;
 
 }

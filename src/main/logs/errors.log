@@ -1,12 +1,28 @@
-2024-02-04 20:09:49,298 INFO [main] a.p.m.Main [Main.java:23] App started.
-2024-02-04 20:09:49,404 INFO [main] a.p.m.Main [Main.java:70] Connected to database!
-2024-02-04 20:09:49,611 INFO [main] a.p.m.Main [Main.java:79] App finished executing.
-2024-02-08 20:06:43,599 INFO [main] a.p.m.Main [Main.java:23] App started.
-2024-02-08 20:06:43,698 INFO [main] a.p.m.Main [Main.java:70] Connected to database!
-2024-02-08 20:06:43,700 INFO [main] a.p.m.Main [Main.java:79] App finished executing.
-2024-02-08 20:08:32,460 INFO [main] a.p.m.Main [Main.java:24] App started.
-2024-02-08 20:08:32,549 INFO [main] a.p.m.Main [Main.java:71] Connected to database!
-2024-02-08 20:08:32,563 INFO [main] a.p.m.Main [Main.java:84] App finished executing.
-2024-02-08 20:27:54,834 INFO [main] a.p.m.Main [Main.java:24] App started.
-2024-02-08 20:27:54,932 INFO [main] a.p.m.Main [Main.java:71] Connected to database!
-2024-02-08 20:27:54,948 INFO [main] a.p.m.Main [Main.java:81] App finished executing.
+2024-02-09 23:04:29,492 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 6 could not be added due to an invalid amount: 
+2024-02-09 23:04:29,494 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 7 could not be added due to an invalid amount: 
+2024-02-09 23:04:29,494 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 8 could not be added due to an invalid amount: 
+2024-02-09 23:04:29,494 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 9 could not be added due to an invalid amount: 
+2024-02-09 23:04:29,494 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 10 could not be added due to an invalid amount: 
+2024-02-09 23:04:29,495 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 11 could not be added due to an invalid amount: 
+2024-02-09 23:04:29,495 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 12 could not be added due to an invalid amount: 
+2024-02-09 23:04:30,426 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 6 could not be added due to an invalid amount: 
+2024-02-09 23:04:30,427 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 7 could not be added due to an invalid amount: 
+2024-02-09 23:04:30,427 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 8 could not be added due to an invalid amount: 
+2024-02-09 23:04:30,427 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 9 could not be added due to an invalid amount: 
+2024-02-09 23:04:30,427 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 10 could not be added due to an invalid amount: 
+2024-02-09 23:04:30,427 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 11 could not be added due to an invalid amount: 
+2024-02-09 23:04:30,427 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 12 could not be added due to an invalid amount: 
+2024-02-09 23:04:30,607 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 6 could not be added due to an invalid amount: 
+2024-02-09 23:04:30,607 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 7 could not be added due to an invalid amount: 
+2024-02-09 23:04:30,608 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 8 could not be added due to an invalid amount: 
+2024-02-09 23:04:30,608 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 9 could not be added due to an invalid amount: 
+2024-02-09 23:04:30,608 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 10 could not be added due to an invalid amount: 
+2024-02-09 23:04:30,608 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 11 could not be added due to an invalid amount: 
+2024-02-09 23:04:30,608 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 12 could not be added due to an invalid amount: 
+2024-02-09 23:04:37,491 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 6 could not be added due to an invalid amount: 
+2024-02-09 23:04:37,492 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 7 could not be added due to an invalid amount: 
+2024-02-09 23:04:37,492 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 8 could not be added due to an invalid amount: 
+2024-02-09 23:04:37,492 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 9 could not be added due to an invalid amount: 
+2024-02-09 23:04:37,492 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 10 could not be added due to an invalid amount: 
+2024-02-09 23:04:37,492 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 11 could not be added due to an invalid amount: 
+2024-02-09 23:04:37,492 ERROR [JavaFX Application Thread] a.p.u.DatabaseUtils [DatabaseUtils.java:160] Transaction with ID 12 could not be added due to an invalid amount: 
