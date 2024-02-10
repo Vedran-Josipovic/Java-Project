@@ -174,6 +174,11 @@ public class DatabaseUtils {
         try (Connection connection = connectToDatabase()) {
             StringBuilder baseSqlQuery = new StringBuilder("SELECT * FROM TRANSACTION WHERE 1=1");
 
+            if (Optional.ofNullable(transactionFilter.getId()).isPresent()) {
+                baseSqlQuery.append(" AND ID = ?");
+                queryParams.put(paramOrdinalNumber++, transactionFilter.getId());
+            }
+
             if (Optional.ofNullable(transactionFilter.getName()).filter(s -> !s.isEmpty()).isPresent()) {
                 baseSqlQuery.append(" AND LOWER(NAME) LIKE ?");
                 queryParams.put(paramOrdinalNumber++, "%" + transactionFilter.getName().toLowerCase() + "%");
@@ -205,6 +210,7 @@ public class DatabaseUtils {
 
 
             PreparedStatement preparedStatement = connection.prepareStatement(baseSqlQuery.toString());
+            logger.info(preparedStatement.toString());
 
             for (Integer paramNumber : queryParams.keySet()) {
                 if (queryParams.get(paramNumber) instanceof String stringQueryParam) {
@@ -219,7 +225,9 @@ public class DatabaseUtils {
             }
 
             ResultSet resultSet = preparedStatement.executeQuery();
+            logger.info(resultSet.toString());
             transactions = mapResultSetToTransactionList(resultSet);
+            logger.info(transactions.toString());
         } catch (SQLException | IOException ex) {
             String message = "An error occurred while retrieving filtered transactions from the database!";
             logger.error(message, ex);

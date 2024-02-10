@@ -17,7 +17,7 @@ public class Transaction extends Entity {
     private String description;
     private LocalDate date;
 
-    public Transaction(){
+    public Transaction() {
 
     }
 
@@ -98,7 +98,9 @@ public class Transaction extends Entity {
             if (id == null || name == null || name.isEmpty()) {
                 throw new entityInitializationException("Task must have a non-null id and a non-empty name.");
             }
+            //logger.info("Transaction {" + id + "} amount: {" + amount + "}");
             validateTransactionAmount();
+
 
             transaction.id = this.id;
             transaction.name = this.name;
@@ -123,7 +125,7 @@ public class Transaction extends Entity {
             if (amount.compareTo(BigDecimal.ZERO) < 0) {
                 throw new TransactionAmountException("Transactions must have a non-negative amount.");
             }
-            if(amount.compareTo(BigDecimal.ZERO) == 0){
+            if (amount.compareTo(BigDecimal.ZERO) == 0) {
                 logger.warn("Transaction is zero.");
             }
         }
