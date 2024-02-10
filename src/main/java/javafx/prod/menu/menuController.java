@@ -28,7 +28,7 @@ public class menuController {
         try {
             Scene scene = new Scene(fxmlLoader.load(), HelloApplication.width, HelloApplication.height);
             scene.getStylesheets().add(css);
-            HelloApplication.getMainStage().setTitle("Address Add");
+            HelloApplication.getMainStage().setTitle("Add an address");
             HelloApplication.getMainStage().setScene(scene);
             HelloApplication.getMainStage().show();
         } catch (IOException e) {
@@ -42,6 +42,19 @@ public class menuController {
             Scene scene = new Scene(fxmlLoader.load(), HelloApplication.width, HelloApplication.height);
             scene.getStylesheets().add(css);
             HelloApplication.getMainStage().setTitle("Transaction Search");
+            HelloApplication.getMainStage().setScene(scene);
+            HelloApplication.getMainStage().show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void showTransactionAddScreen() {
+        FXMLLoader fxmlLoader = new FXMLLoader(javafx.prod.HelloApplication.class.getResource("transactionAdd.fxml"));
+        try {
+            Scene scene = new Scene(fxmlLoader.load(), HelloApplication.width, HelloApplication.height);
+            scene.getStylesheets().add(css);
+            HelloApplication.getMainStage().setTitle("Add a transaction");
             HelloApplication.getMainStage().setScene(scene);
             HelloApplication.getMainStage().show();
         } catch (IOException e) {

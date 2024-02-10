@@ -130,6 +130,21 @@ public class DatabaseUtils {
         }
     }
 
+    public static List<Transaction> getTransactions() {
+        List<Transaction> transactions = new ArrayList<>();
+        try (Connection connection = connectToDatabase()) {
+            String sqlQuery = "SELECT * FROM TRANSACTION";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sqlQuery);
+            transactions = mapResultSetToTransactionList(resultSet);
+        } catch (SQLException | IOException e) {
+            String message = "An error occurred while connecting to the database!";
+            logger.error(message, e);
+            System.out.println(message);
+        }
+        return transactions;
+    }
+
     private static List<Transaction> mapResultSetToTransactionList(ResultSet resultSet) throws SQLException {
         List<Transaction> transactions = new ArrayList<>();
         while (resultSet.next()) {
